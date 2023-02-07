@@ -1,14 +1,5 @@
-# Getting Started
-## Installation
-Welcome to the PureChart community. First, add the `purechart` gem to your project by including the following line in your Gemfile.
-
-```shell
-gem 'purechart'
-```
-
-## Usage
-Then, display any of our charts in one of your views by calling a chart helper function and passing your JSON data as an argument.
-
+# Lollipop Chart
+## Example
 #### dashboard_controller.rb
 ```ruby
 class DashboardController < ApplicationController
@@ -48,3 +39,6 @@ end
     <%= lollipop_chart @data, @axes %>
 </div>
 ```
+
+#### Result
+![Images](./images/charts/Lollipop.png) {% align="center" %}

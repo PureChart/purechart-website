@@ -26,7 +26,7 @@ h1 {
     height: 100%;
     flex-shrink: 0;
 
-    border-right: 1px solid black;
+    border-right: 2px solid black;
 
     display: flex;
     flex-direction: column;
@@ -36,6 +36,7 @@ h1 {
 .docs-split .content {
     flex-grow: 1;
     padding: var(--space);
+    overflow-y: auto;
 }
 
 /* MARKDOWN */
@@ -49,7 +50,12 @@ h3 {
     font-weight: 700;
 }
 
-p {
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+p, ul li {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
 }
@@ -60,7 +66,7 @@ code {
     border-radius: 2px;
 
     font-family: 'DM Mono', monospace;
-    font-size: 1rem;
+    font-size: 0.85rem;
 }
 
 pre {
@@ -68,7 +74,7 @@ pre {
     border: 1px solid rgba(var(--color-light-gray), 1);
     border-radius: 2px;
 
-    font-size: 0.75rem;
+    font-size: 0.85rem;
 
     padding: calc(0.5 * var(--space));
 }
@@ -78,6 +84,18 @@ pre code {
 }
 
 /* SIDEBAR */
+.logo-container {
+    height: 100px;
+    width: 100%;
+
+    background-color: black;
+    padding: var(--space);
+}
+
+.logo-container img {
+    width: 100%;
+}
+
 .links {
     display: flex;
     align-items: end;
@@ -86,7 +104,7 @@ pre code {
     width: 200px;
 }
 
-.links span {
+.navigation-span {
     display: block;
     text-align: left;
 
@@ -99,13 +117,15 @@ pre code {
 
     transition: 0.25s all ease;
     cursor: pointer;
+
+    margin-bottom: 4px;
 }
 
-.links span:hover {
+.navigation-span:hover {
     background-color: rgba(var(--color-light-gray), 0.5);
 }
 
-.links span.active {
+.navigation-span.active {
     font-weight: 700;
 
     background-color: rgb(var(--color-light-gray));
@@ -113,12 +133,24 @@ pre code {
     padding: calc(0.5 * var(--space));
 }
 
-.links span.first {
+.navigation-span.first {
     width: 100%;
 }
 
-.links span.secondary {
+.navigation-span.secondary {
     width: 85%;
+}
+
+span.bold {
+    font-weight: 700;
+}
+
+span.light-gray {
+    color: rgb(var(--color-light-gray));
+}
+
+.inline {
+    display: inline-block !important;
 }
 
 /* PADDING */
@@ -143,7 +175,12 @@ h1.centered {
 }
 
 /* MARKDOWN */
-
+article img {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
 
 /* VARIABLES */
 :root {

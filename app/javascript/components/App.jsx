@@ -8,6 +8,8 @@ import 'prismjs';
 import 'prismjs/themes/prism.css';
 
 import Prism from 'react-prism';
+import First from './elements/FirstLink';
+import Second from './elements/SecondLink';
 
 export function Fence({ children, language }) {
   return (
@@ -73,21 +75,20 @@ const App = () => {
 
   function navigateToPath(path) {
     //window.location.hash = '#' + path;
+    console.log("DEBUG - Navigate called in parent.")
     navigate(`#${path}`)
   }
 
   return (
     <div className='docs-split'>
       <div className='sidebar'>
-        <h1 className='padding-left padding-top padding-right centered full-width'>Docs</h1>
+        <div className='logo-container'><img src='images/PureChartWhite.png'/></div>
 
-        <div className='links'>
-          <span className={`first ${activeIndex === 'getting-started' ? "active" : ""}`} onClick={() => navigateToPath('getting-started')}>Getting Started</span>
+        <div className='links padding-top'>
+          <First title="Getting Started" path="getting-started" navigateToPath={navigateToPath} activeIndex={activeIndex}></First>
           
-          <span className={`first ${activeIndex === 'types-of-charts' ? "active" : ""}`} onClick={() => navigateToPath('types-of-charts')}>Types of Charts</span>
-            <span className='secondary'>| Lollipop</span>
-            <span className='secondary'>| Column</span>
-            <span className='secondary'>| Bar</span>
+          <First title="Types of Charts" path="types-of-charts" navigateToPath={navigateToPath} activeIndex={activeIndex}></First>
+            <Second title="Lollipop" path="types-of-charts/lollipop" navigateToPath={navigateToPath} activeIndex={activeIndex}></Second>
         </div>
       </div>
 

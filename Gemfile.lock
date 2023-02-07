@@ -131,6 +131,7 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
+    purechart (0.0.2)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-proxy (0.7.6)
@@ -225,6 +226,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   puma (~> 5.0)
+  purechart
   rails (~> 7.0.4, >= 7.0.4.2)
   selenium-webdriver
   sprockets-rails
