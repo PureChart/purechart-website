@@ -1,13 +1,19 @@
-FROM ruby:3.0.2
-RUN apt-get update -qq \
-&& apt-get install -y curl build-essential libpq-dev \
- nodejs postgresql-client &&\
-  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  apt-get update && apt-get install -y nodejs yarn
-ADD . /app
+FROM ruby:3.0.0
+
+# Install nodejs on the default ruby 3 image
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
+      apt-get install -y nodejs build-essential
+
 WORKDIR /app
+
+COPY Gemfile ./Gemfile
+COPY Gemfile.lock ./Gemfile.lock
+COPY package.json ./package.json
+COPY package-lock.json ./package-lock.json
 RUN bundle install
-EXPOSE 3000
-CMD ["bash"]
+RUN bundle config set force_ruby_platform true
+RUN npm install
+
+COPY . .
+
+CMD ["bin/rails", "console"]

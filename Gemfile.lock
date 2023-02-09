@@ -87,6 +87,8 @@ GEM
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dockerfile-rails (1.0.12)
+      rails
     dry-cli (1.0.0)
     erubi (1.12.0)
     globalid (1.1.0)
@@ -131,7 +133,6 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
-    purechart (0.0.2)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-proxy (0.7.6)
@@ -223,10 +224,10 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  dockerfile-rails (>= 1.0)
   importmap-rails
   jbuilder
   puma (~> 5.0)
-  purechart
   rails (~> 7.0.4, >= 7.0.4.2)
   selenium-webdriver
   sprockets-rails
