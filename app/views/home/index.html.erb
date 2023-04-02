@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag "home" %>
+
+<div class="split">
+    <div class="left">
+        <div>
+            <%= image_tag "PureChartWhite.png", class: "logo" %>
+            <p>Simple and fully configurable HTML/CSS charts for Ruby on Rails.</p>
+            <a class="button" href="https://docs.purechart.org">Get Started</a>
+        </div>
+    </div>
+
+    <div class="right">
+        <%= lollipop_chart @data, @configuration, "dark" %>
+    </div>
+</div>

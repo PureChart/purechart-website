@@ -1,0 +1,18 @@
+---
+title:
+  font: Inter Tight
+  weight: 700
+  color: "#FFFFFF"
+labels:
+  font: Inter Tight
+  weight: 700
+  color: "#FFFFFF"
+ticks:
+  font: Inter Tight
+  weight: 400
+  color: "#FFFFFF"
+axes:
+  style: "2px solid #FFFFFF"
+gridlines:
+  style: "2px dashed #FFFFFF33"
+...
